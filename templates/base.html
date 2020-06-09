@@ -1,0 +1,26 @@
+
+<head>
+    <style>
+        ul{
+           display: block;
+            background-color: azure;
+        }
+        li{
+            padding: 20px;
+            margin: 20px;
+            display: block;
+            background-color: blanchedalmond;
+        }
+        a{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>
+<a href="{% url 'admin1' %}">Admin</a></li>
+<li><a href="{% url 'user' %}">User</a></li></ul>
+{% block content %}
+{% endblock %}
+</body>

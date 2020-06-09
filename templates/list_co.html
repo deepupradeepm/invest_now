@@ -1,0 +1,28 @@
+{% extends 'awelcome.html' %}
+{% block content %}
+<table align="center" border="2">
+    <tr>
+        <th>name</th>
+        <th>location</th>
+        <th>share_price</th>
+        <th>update</th>
+        <th>delete</th>
+    </tr>
+
+{% for x in data %}
+    <tr>
+        <th>{{ x.name }}</th>
+        <th>{{ x.location }}</th>
+        <th>{{ x.share_price }}</th>
+        <th><a href="{% url 'update_co' id=x.id%}">update</a> </th>
+        <th><a href="{% url 'delete_co' id=x.id%}">delete</a> </th>
+    </tr>
+{% endfor %}
+
+{% if messages %}
+    {% for x in messages %}
+        {{ x }}
+    {% endfor %}
+    {% endif %}
+</table>
+{% endblock %}

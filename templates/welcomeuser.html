@@ -1,0 +1,12 @@
+
+<table align="left">
+    <tr><th><a href="{% url 'logout_user' %}">logout</a> </th></tr>
+</table>
+
+<br>
+{{ user }}<br>
+<a href="{% url 'create' %}">Create_investment</a><br>
+
+<a href="{% url 'list' %}">investec_list</a>
+{% block content %}
+{% endblock %}

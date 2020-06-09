@@ -1,0 +1,35 @@
+{% extends 'welcomeuser.html' %}
+{% block content %}
+    {% if qs %}
+<table align="center" border="2">
+    <tr>
+        <th>company_name</th>
+        <th>noofsahres</th>
+        <th>sahre_value</th>
+        <th>total</th>
+        <th>update</th>
+        <th>delete</th>
+    </tr>
+
+    {% for x in qs %}
+        <tr>
+        <th>{{ x.company_name.name }}</th>
+        <th>{{ x.noofsahes }}</th>
+        <th>{{ x.company_name.share_price }}</th>
+        <th>{% widthratio  x.noofsahes 1 x.company_name.share_price %}</th>
+        <th><a href="{% url 'update_user' id=x.id %}">update_share</a> </th>
+        <th><a href="{% url 'delete_user' id=x.id %}">delete_share</a> </th></tr>
+    {% endfor %}
+</table>
+        <table align="right">
+        <tr>total_investment by  {{ user}}------{{ total_investment }}</tr>
+        </table>
+
+    {% endif %}
+{% if messages %}
+    {% for x in messages %}
+        {{ x }}
+    {% endfor %}
+    {% endif %}
+
+{% endblock %}

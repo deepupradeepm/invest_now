@@ -1,0 +1,17 @@
+{% extends 'awelcome.html' %}
+{% block content %}
+<form method="post">
+<table>
+    {% csrf_token %}
+    {{ form.as_table}}<br>
+
+    </table><br>
+<button type="submit">save</button>
+</form>
+
+    {% if messages %}
+    {% for x in messages %}
+        {{ x }}
+    {% endfor %}
+    {% endif %}
+{% endblock %}

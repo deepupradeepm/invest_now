@@ -1,0 +1,13 @@
+<table align="left">
+    <tr><th><a href="{% url 'logout_admin' %}">logout</a> </th></tr>
+</table>
+<br>
+
+
+<h2>welcome{{ user }}</h2><br>
+
+<a href="{% url 'addc' %}">create_company</a><br>
+<a href="{% url 'listco' %}">list_company</a>
+
+{% block content %}
+{% endblock %}
